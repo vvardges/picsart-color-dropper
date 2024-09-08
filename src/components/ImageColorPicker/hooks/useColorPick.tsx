@@ -50,7 +50,7 @@ export function useColorPick(
     return () => {
       canvas.cleanUp(onMove)
     }
-  }, [imgSrc])
+  }, [imgSrc, canvasRef])
 
   return {
     color,

@@ -14,6 +14,11 @@ export class Canvas {
     }) as CanvasRenderingContext2D
   }
 
+  private colorToHex(c: number) {
+    const hex = c.toString(16);
+    return hex.length === 1 ? "0" + hex : hex;
+  }
+
   public listenMovements(listener: any) {
     this.canvas.addEventListener('touchmove', listener)
     this.canvas.addEventListener('pointermove', listener)
@@ -64,9 +69,9 @@ export class Canvas {
       1,
       1
     ).data
-    if (pixelData.length < 4) return 'rgb(0,0,0)' // Return black color if unable to retrieve pixel data
+    if (pixelData.length < 4) return '#000000' // Return black color if unable to retrieve pixel data
 
     const [red, green, blue] = pixelData
-    return `rgb(${red}, ${green}, ${blue})`
+    return "#" + this.colorToHex(red) + this.colorToHex(green) + this.colorToHex(blue);
   }
 }
