@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const ZoomPreviewContainer = styled.div`
   position: absolute;
@@ -8,7 +8,7 @@ export const ZoomPreviewContainer = styled.div`
   align-items: center;
   flex-direction: column;
   z-index: 100;
-`
+`;
 
 export const ZoomPreviewWindow = styled.div`
   width: 100px;
@@ -24,4 +24,4 @@ export const ZoomPreviewWindow = styled.div`
     width: 60px;
     height: 60px;
   }
-`
+`;

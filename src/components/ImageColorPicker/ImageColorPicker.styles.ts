@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const ImageColorPickCanvas = styled.canvas`
   position: relative;
@@ -9,11 +9,11 @@ export const ImageColorPickCanvas = styled.canvas`
   z-index: 50;
   touch-action: none;
   object-fit: cover;
-`
+`;
 
 export const ImageColorPickContainer = styled.div`
   position: relative;
   display: flex;
   width: 100%;
   height: 100%;
-`
+`;

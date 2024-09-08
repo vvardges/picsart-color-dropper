@@ -1,2 +1,2 @@
-export { useColorPick } from './useColorPick'
-export { useMobileDetect } from './useMobileDetect'
+export { useColorPick } from "./useColorPick";
+export { useMobileDetect } from "./useMobileDetect";

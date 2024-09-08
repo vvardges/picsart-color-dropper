@@ -1,22 +1,22 @@
-import React, { useRef } from 'react'
-import { ColorPreview, ZoomPreview } from './components'
+import React, { useRef } from "react";
+import { ColorPreview, ZoomPreview } from "./components";
 import {
   ImageColorPickCanvas,
-  ImageColorPickContainer
-} from './ImageColorPicker.styles'
-import { useColorPick } from './hooks'
-import { ImageColorPickerProps } from './ImageColorPicker.types'
+  ImageColorPickContainer,
+} from "./ImageColorPicker.styles";
+import { useColorPick } from "./hooks";
+import { ImageColorPickerProps } from "./ImageColorPicker.types";
 
 const ImageColorPicker = ({
   onColorPick,
   imgSrc,
-  zoom
+  zoom,
 }: ImageColorPickerProps) => {
-  const canvasRef = useRef<HTMLCanvasElement>(null)
-  const { color, coordinates, dimensions } = useColorPick(canvasRef, imgSrc)
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const { color, coordinates, dimensions } = useColorPick(canvasRef, imgSrc);
 
   return (
-    <ImageColorPickContainer data-testid='image-color-pick-container'>
+    <ImageColorPickContainer data-testid="image-color-pick-container">
       <ColorPreview color={color} />
       <ZoomPreview
         zoom={zoom}
@@ -26,14 +26,14 @@ const ImageColorPicker = ({
         image={imgSrc}
       />
       <ImageColorPickCanvas
-        data-testid='image-color-pick-canvas'
-        id='image-color-pick-canvas'
+        data-testid="image-color-pick-canvas"
+        id="image-color-pick-canvas"
         ref={canvasRef}
         onClick={() => onColorPick(color)}
         onTouchEnd={() => onColorPick(color)}
       />
     </ImageColorPickContainer>
-  )
-}
+  );
+};
 
-export default ImageColorPicker
+export default ImageColorPicker;

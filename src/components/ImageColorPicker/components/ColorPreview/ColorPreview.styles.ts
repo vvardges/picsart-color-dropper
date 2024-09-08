@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const ColorPreviewContainer = styled.div`
   position: absolute;
@@ -14,4 +14,4 @@ export const ColorPreviewContainer = styled.div`
     width: 30px;
     height: 30px;
   }
-`
+`;

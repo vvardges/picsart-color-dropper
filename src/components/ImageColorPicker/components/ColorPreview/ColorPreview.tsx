@@ -1,15 +1,15 @@
-import React from 'react'
-import { ColorPreviewContainer } from './ColorPreview.styles'
+import React from "react";
+import { ColorPreviewContainer } from "./ColorPreview.styles";
 
 type ColorPreviewProps = {
-  color: string
-}
+  color: string;
+};
 
 export const ColorPreview = ({ color }: ColorPreviewProps) => (
   <ColorPreviewContainer
-    data-testid='color-preview'
+    data-testid="color-preview"
     style={{
-      backgroundColor: color
+      backgroundColor: color,
     }}
   />
-)
+);
