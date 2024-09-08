@@ -4,7 +4,7 @@ import {
   ImageColorPickCanvas,
   ImageColorPickContainer
 } from './ImageColorPicker.styles'
-import { useColorPick } from './hooks/useColorPick'
+import { useColorPick } from './hooks'
 import { ImageColorPickerProps } from './ImageColorPicker.types'
 
 const ImageColorPicker = ({
