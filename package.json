@@ -2,7 +2,7 @@
   "name": "picsart-color-dropper",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://vvardges.github.io",
+  "homepage": "https://vvardges.github.io/picsart-color-dropper",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
