@@ -9,6 +9,7 @@ export const ImageColorPickCanvas = styled.canvas`
   z-index: 50;
   touch-action: none;
   object-fit: cover;
+  cursor: none;
 `;
 
 export const ImageColorPickContainer = styled.div`

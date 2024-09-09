@@ -1,25 +1,41 @@
 import React from "react";
+import ImageUploader from "./components/ImageUploader";
 
 type Props = {
   pickedColor: string;
   onZoomChange: (e: number) => void;
   zoom: number;
+  onImageUpload: (img: string) => void;
+  isPickerEnabled: boolean;
+  onPickerClick: () => void;
 };
-const Header = ({ pickedColor = "", onZoomChange, zoom }: Props) => {
+const Header = ({
+  pickedColor = "",
+  onZoomChange,
+  zoom,
+  onImageUpload,
+  isPickerEnabled,
+  onPickerClick,
+}: Props) => {
   return (
     <div className="App-header">
-      <button>Upload Image</button>
-      <div>
-        <button>Mode</button>
-        <input
-          type="range"
-          min="1"
-          max="10"
-          value={zoom}
-          onChange={(e) => onZoomChange(Number(e.target.value))}
-        />
+      <div className="App-header_toolbar">
+        <button onClick={onPickerClick}>Mode</button>
+        {isPickerEnabled && (
+          <>
+            <input
+              type="range"
+              min="1"
+              max="10"
+              value={zoom}
+              onChange={(e) => onZoomChange(Number(e.target.value))}
+            />
+            zoom: {zoom}
+          </>
+        )}
       </div>
-      <span>{pickedColor}</span>
+      {isPickerEnabled && <b>{pickedColor.toUpperCase()}</b>}
+      <ImageUploader onImageUpload={onImageUpload} />
     </div>
   );
 };
