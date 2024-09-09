@@ -10,7 +10,7 @@ type Props = {
   onPickerClick: () => void;
 };
 const Header = ({
-  pickedColor = "",
+  pickedColor,
   onZoomChange,
   zoom,
   onImageUpload,
