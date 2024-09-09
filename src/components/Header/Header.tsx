@@ -11,7 +11,7 @@ type Props = {
   onPickerClick: () => void;
 };
 const Header = ({
-  pickedColor = 'black',
+  pickedColor = "black",
   onZoomChange,
   zoom,
   onImageUpload,
@@ -21,9 +21,12 @@ const Header = ({
   return (
     <div className="App-header">
       <div className="App-header_toolbar">
-        <button onClick={onPickerClick} style={{
-          backgroundColor: isPickerEnabled ? pickedColor : "white",
-        }}>
+        <button
+          onClick={onPickerClick}
+          style={{
+            backgroundColor: isPickerEnabled ? pickedColor : "white",
+          }}
+        >
           <img src={IconColorPicker} alt="" />
         </button>
         {isPickerEnabled && (

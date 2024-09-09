@@ -5,9 +5,9 @@ import { ImageColorPicker } from "./components/ImageColorPicker";
 import { Header } from "./components/Header";
 
 function App() {
-  const [pickedColor, setPickedColor] = useState('#e0e0e0');
+  const [pickedColor, setPickedColor] = useState("#e0e0e0");
   const [zoom, setZoom] = useState(1);
-  const [imagePreviewUrl, setImagePreviewUrl] = useState<string>(defaultImage);
+  const [imageUrl, setImageUrl] = useState<string>(defaultImage);
   const [isPickerEnabled, setIsPickerEnabled] = useState(false);
   return (
     <div className="App">
@@ -15,13 +15,13 @@ function App() {
         pickedColor={pickedColor}
         onZoomChange={setZoom}
         zoom={zoom}
-        onImageUpload={setImagePreviewUrl}
+        onImageUpload={setImageUrl}
         isPickerEnabled={isPickerEnabled}
         onPickerClick={() => setIsPickerEnabled(!isPickerEnabled)}
       />
       <ImageColorPicker
-        imgSrc={imagePreviewUrl}
-        onColorPick={(color) => setPickedColor(color)}
+        image={imageUrl}
+        onColorPick={setPickedColor}
         zoom={zoom}
         isPickerEnabled={isPickerEnabled}
       />

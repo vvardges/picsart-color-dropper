@@ -7,7 +7,7 @@ export function useColorPick(
 ) {
   const canvasInstanceRef = useRef<Canvas | null>(null);
 
-  const [color, setColor] = useState<string>("tranparent");
+  const [color, setColor] = useState<string>("transparent");
   const [coordinates, setCoordinates] = useState({ x: 0, y: 0 });
 
   const onMove = (

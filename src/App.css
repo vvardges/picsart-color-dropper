@@ -1,3 +1,7 @@
+body {
+  overflow: hidden;
+}
+
 .App-header {
   padding: 16px;
   display: flex;

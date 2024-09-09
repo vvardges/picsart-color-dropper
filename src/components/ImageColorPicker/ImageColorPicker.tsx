@@ -8,19 +8,19 @@ import { useColorPick } from "./hooks";
 
 type ImageColorPickerProps = {
   onColorPick: (color: string) => void;
-  imgSrc: string;
+  image: string;
   zoom?: number;
   isPickerEnabled?: boolean;
 };
 
 const ImageColorPicker = ({
   onColorPick,
-  imgSrc,
+  image,
   zoom,
   isPickerEnabled,
 }: ImageColorPickerProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const { color, coordinates, dimensions } = useColorPick(canvasRef, imgSrc);
+  const { color, coordinates, dimensions } = useColorPick(canvasRef, image);
 
   return (
     <ImageColorPickContainer data-testid="image-color-pick-container">
@@ -32,7 +32,7 @@ const ImageColorPicker = ({
             color={color}
             coordinates={coordinates}
             dimensions={dimensions}
-            image={imgSrc}
+            image={image}
           />
         </>
       )}

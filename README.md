@@ -3,11 +3,13 @@
 ![](demo.gif)
 
 ## Table of Contents
+
 - [Features](#key-features)
 - [Demo!](#demo)
 - [Available Scripts](#available-scripts)
 
 ## Key Features
+
 - 🌐 **Cross-Browser Compatibility:** Rest assured, your users can access and use this package across various platforms, as it ensures compatibility with major web browsers such as **Chrome, Safari, Firefox, Edge, Opera, and Samsung Internet.**
 
 - 🌈 **Color Picking Made Easy:** Enable your users to effortlessly pick colors from any image, thanks to the intuitive and interactive interface.
@@ -18,8 +20,8 @@
 
 - 🎨 **Customization Options:** Tailor the color picker to your specific needs by adjusting the zoom level, image source, and more. It offers the flexibility you desire.
 
-
 ## Demo!
+
 <a
 href="https://vvardges.github.io/picsart-color-dropper/"
 target="_blank"
