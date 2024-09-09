@@ -21,7 +21,6 @@ const ImageColorPicker = ({
 }: ImageColorPickerProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { color, coordinates, dimensions } = useColorPick(canvasRef, image);
-
   return (
     <ImageColorPickContainer data-testid="image-color-pick-container">
       {isPickerEnabled && (
@@ -33,6 +32,7 @@ const ImageColorPicker = ({
             coordinates={coordinates}
             dimensions={dimensions}
             image={image}
+            canvasRef={canvasRef}
           />
         </>
       )}

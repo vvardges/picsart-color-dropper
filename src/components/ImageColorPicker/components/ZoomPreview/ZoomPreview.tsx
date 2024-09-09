@@ -2,6 +2,7 @@
 import { Coordinates } from "../../util";
 import { ZoomPreviewContainer, ZoomPreviewWindow } from "./ZoomPreview.styles";
 import { useMobileDetect, useMousePosition } from "../../hooks";
+import { RefObject } from "react";
 
 type ColorPreviewProps = {
   coordinates: Coordinates;
@@ -9,6 +10,7 @@ type ColorPreviewProps = {
   dimensions: { width: number; height: number };
   image: string;
   zoom?: number;
+  canvasRef?: RefObject<HTMLCanvasElement>;
 };
 
 export const ZoomPreview = ({
@@ -17,6 +19,7 @@ export const ZoomPreview = ({
   dimensions,
   image,
   zoom = 0.5,
+  canvasRef,
 }: ColorPreviewProps) => {
   const isMobile = useMobileDetect();
   const mousePosition = useMousePosition();
@@ -31,7 +34,12 @@ export const ZoomPreview = ({
   const imgPosX = x * zoomFactor - errorMargin;
   const imgPosY = y * zoomFactor - errorMargin;
 
-  if (mousePosition.y < headerHeight) return null;
+  const clientHeight = canvasRef?.current?.clientHeight || 0;
+  if (
+    mousePosition.y < headerHeight ||
+    mousePosition.y > clientHeight + headerHeight
+  )
+    return null;
 
   return (
     <ZoomPreviewContainer
