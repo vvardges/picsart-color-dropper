@@ -42,6 +42,9 @@ const ImageColorPicker = ({
         ref={canvasRef}
         onClick={() => onColorPick(color)}
         onTouchEnd={() => onColorPick(color)}
+        style={{
+          cursor: isPickerEnabled ? "none" : "default",
+        }}
       />
     </ImageColorPickContainer>
   );

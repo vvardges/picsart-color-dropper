@@ -1,8 +1,9 @@
 import React from "react";
 import ImageUploader from "./components/ImageUploader";
+import IconColorPicker from "../../assets/IconColorPicker.svg";
 
 type Props = {
-  pickedColor: string;
+  pickedColor?: string;
   onZoomChange: (e: number) => void;
   zoom: number;
   onImageUpload: (img: string) => void;
@@ -10,7 +11,7 @@ type Props = {
   onPickerClick: () => void;
 };
 const Header = ({
-  pickedColor,
+  pickedColor = 'black',
   onZoomChange,
   zoom,
   onImageUpload,
@@ -20,7 +21,11 @@ const Header = ({
   return (
     <div className="App-header">
       <div className="App-header_toolbar">
-        <button onClick={onPickerClick}>Mode</button>
+        <button onClick={onPickerClick} style={{
+          backgroundColor: isPickerEnabled ? pickedColor : "white",
+        }}>
+          <img src={IconColorPicker} alt="" />
+        </button>
         {isPickerEnabled && (
           <>
             <input
